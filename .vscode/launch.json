@@ -5,9 +5,10 @@
       "name": "Hugo: serve + open browser",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:1314",
+      "url": "http://localhost:1313",
       "webRoot": "${workspaceFolder}",
-      "preLaunchTask": "hugo: serve"
+      "preLaunchTask": "hugo: serve",
+      "postDebugTask": "hugo: stop"
     }
   ]
 }

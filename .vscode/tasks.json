@@ -4,7 +4,7 @@
     {
       "label": "hugo: serve",
       "type": "shell",
-      "command": "hugo server --port 1314 --buildDrafts --buildFuture --disableFastRender",
+      "command": "hugo server --port 1313 --buildDrafts --buildFuture --disableFastRender",
       "isBackground": true,
       "problemMatcher": {
         "pattern": {
@@ -26,6 +26,25 @@
       "group": {
         "kind": "build",
         "isDefault": true
+      }
+    },
+    {
+      "label": "hugo: stop",
+      "type": "shell",
+      "command": "pkill -f 'hugo server' || true",
+      "windows": {
+        "command": "taskkill /F /IM hugo.exe & exit /b 0",
+        "options": {
+          "shell": {
+            "executable": "cmd.exe",
+            "args": ["/d", "/c"]
+          }
+        }
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
       }
     },
     {
