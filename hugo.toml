@@ -1,0 +1,7 @@
+baseURL = 'https://joespearing.blog/'
+locale = 'en-us'
+title = 'Joe Spearings Blog'
+
+[module]
+  [[module.imports]]
+    path = "github.com/gethinode/hinode"

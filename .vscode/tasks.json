@@ -1,0 +1,62 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "hugo: serve",
+      "type": "shell",
+      "command": "hugo server --port 1314 --buildDrafts --buildFuture --disableFastRender",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^.*$",
+          "file": 1,
+          "location": 2,
+          "message": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*Watching for changes.*",
+          "endsPattern": ".*Web Server is available at.*"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "hugo: build",
+      "type": "shell",
+      "command": "hugo --gc --minify",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "hugo: clean",
+      "type": "shell",
+      "command": "rm -rf public resources/_gen",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "hugo: update modules",
+      "type": "shell",
+      "command": "hugo mod get -u ./... && hugo mod tidy",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}
