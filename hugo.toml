@@ -1,7 +1,35 @@
 baseURL = 'https://joespearing.blog/'
-locale = 'en-us'
-title = 'Joe Spearings Blog'
+languageCode = 'en-us'
+title = 'Joe Spearing'
 
 [module]
   [[module.imports]]
     path = "github.com/gethinode/hinode"
+
+[params]
+  [params.sharing]
+    enabled = false
+  [params.main]
+    description = "Joe Spearing, Research Fellow in health and labour economics at the Centre for Health Economics, University of York."
+
+[menus]
+  [[menus.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 10
+  [[menus.main]]
+    name = "Research"
+    pageRef = "/research"
+    weight = 20
+  [[menus.main]]
+    name = "Teaching"
+    pageRef = "/teaching"
+    weight = 30
+  [[menus.main]]
+    name = "CV"
+    pageRef = "/cv"
+    weight = 40
+  [[menus.main]]
+    name = "Non-academic writing"
+    pageRef = "/non-academic-writing"
+    weight = 50

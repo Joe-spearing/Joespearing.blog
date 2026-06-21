@@ -1,0 +1,8 @@
+{{- $path := .Get "path" | default "blog" -}}
+{{- $pages := where site.RegularPages "Section" $path -}}
+{{- partial "assets/card-group.html" (dict
+    "page"     .Page
+    "list"     $pages
+    "cols"     (.Get "cols" | default "3")
+    "paginate" false
+) -}}
